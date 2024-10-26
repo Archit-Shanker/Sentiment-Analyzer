@@ -19,8 +19,9 @@ def analyze_sentiment_vader(text):
     return scores['compound']
 
 
-def sentiment_analyzer(text):
+def sentiment_analyzer():
     """Combine TextBlob and VADER results"""
+    text = input("Enter A Text:")
     textblob_score = analyze_sentiment_textblob(text)
     vader_score = analyze_sentiment_vader(text)
     average_score = (textblob_score + vader_score) / 2
@@ -31,4 +32,4 @@ def sentiment_analyzer(text):
         return "Negative"
     else:
         return "Neutral"
-print(sentiment_analyzer(""))
+print(sentiment_analyzer())
